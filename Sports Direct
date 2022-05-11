@@ -1,0 +1,21 @@
+local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
+local Keybind = "f"
+local limit = 0
+
+local function limiter()
+spawn(function()
+if limit < 2 then
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-195.589691, -463.662384, 92.2535934, 0.238895774, 2.38148239e-08, 0.971045196, 3.21983293e-08, 1, -3.24463443e-08, -0.971045196, 3.90173298e-08, 0.238895774)
+limit = limit + 1
+warn(limit)
+else
+print("Limit Exceeded")
+end
+end)
+end
+
+Mouse.KeyDown:Connect(function(Key)
+    if Key == Keybind then
+        limiter()
+    end
+end)
